@@ -4,7 +4,7 @@ import Chat from "./Chat";
 import Pusher, { Channel } from "pusher-js";
 import "./Home.css";
 import type { IContextUser, IResMessage, IResUser } from "./types";
-import { getUsersAndMessages } from "./state_funcs/messages";
+import { getUsersAndMessages } from "./state_funcs/messages_state";
 interface IProps {
   setAuth: (val: boolean) => void;
 }
@@ -81,6 +81,7 @@ function Home({ setAuth }: IProps) {
     <div className="home">
       <div className="home__body">
         <Sidebar
+          setAuth={setAuth}
           users={users}
           currentUserId={currentUserId}
           setCurrentUserId={setCurrentUserId}

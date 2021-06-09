@@ -3,6 +3,7 @@ export interface IReqMessage {
   toName: string;
   timestamp: string;
   message: string;
+  officer?: boolean
 }
 
 export interface IResMessage {
@@ -20,7 +21,10 @@ export interface IResUser {
   _id: string;
   username: string;
   lastSeen: string;
-  token: string;
+  token?: string;
+  image?: string;
+  email?: string;
+  officer?: boolean;
 }
 
 export interface IContextUser {
@@ -28,4 +32,5 @@ export interface IContextUser {
   username: string;
   lastSeen: string;
   messages: IResMessage[];
+  officer?: boolean;
 }

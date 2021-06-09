@@ -5,6 +5,7 @@ import { IContextUser, IResUser } from "../types";
 export const getUsersAndMessages = async () => {
   try {
     const users = await getAllUsers();
+    console.log(users)
     const user: IResUser = JSON.parse(localStorage.getItem("user")!);
     const from = user._id;
     let newUsers: IContextUser[] = users.map((u) => {

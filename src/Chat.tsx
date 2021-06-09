@@ -30,12 +30,18 @@ function Chat({ messages, currentUser, setAuth }: IProps) {
     const message = eleRef?.current?.value;
     if (message != null && message?.length > 0) {
       if (currentUser != null) {
+        const sender: IResUser = JSON.parse(localStorage.getItem("user")!)
         createMessage({
           to: currentUser.id,
           toName: currentUser.username,
           message,
           timestamp: "Just now!",
-        }).then((res) => console.log(res));
+          officer: sender.officer
+        })
+          .then((res) => console.log(res))
+          .catch((err) => {
+            console.error(err.message);
+          });
       }
     }
     if (eleRef?.current?.value != null) {

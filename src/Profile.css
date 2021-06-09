@@ -1,0 +1,32 @@
+.profile {
+  /* width: 100%;
+  height: 100%; */
+  margin: auto;
+  margin-top: 20vh;
+  width: 40vw;
+}
+
+.profile__ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile__li {
+  margin: 1rem;
+}
+
+.profile__input {
+  border-radius: 1rem;
+  outline-width: 0;
+  border-width: 0;
+  padding: 0.5rem;
+}
+
+.MuiCard-root {
+  background-color: #efefef !important;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
