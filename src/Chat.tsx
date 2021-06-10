@@ -11,7 +11,7 @@ import {
 
 import "./Chat.css";
 import { createMessage } from "./services/messages";
-import type { IResMessage, IResUser, IContextUser } from "./types";
+import { IResMessage, IResUser, IContextUser } from "./types";
 
 interface IProps {
   messages: IResMessage[];

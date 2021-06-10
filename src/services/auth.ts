@@ -14,15 +14,15 @@ export async function register({
   image?: string;
 }) {
   try {
-    const resUser: IResUser = await axios.post("/auth/register", {
+    const resUser = await axios.post("/auth/register", {
       email,
       image,
       username,
       password,
     });
-    localStorage.setItem("token", resUser.token);
-    localStorage.setItem("user", JSON.stringify(resUser));
-    return resUser.token;
+    localStorage.setItem("token", resUser.data.token!);
+    localStorage.setItem("user", JSON.stringify(resUser.data));
+    return resUser.data.token;
   } catch (err) {
     throw new Error("Registration Error: " + err);
   }
@@ -34,7 +34,7 @@ export async function login(username: string, password: string) {
       username,
       password,
     });
-    localStorage.setItem("token", resUser.data.token);
+    localStorage.setItem("token", resUser.data.token!);
     localStorage.setItem("user", JSON.stringify(resUser.data));
     return resUser.data.token;
   } catch (err) {

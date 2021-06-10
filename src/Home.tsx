@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import config from './config'
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
 import Pusher, { Channel } from "pusher-js";
@@ -35,7 +36,7 @@ function Home({ setAuth }: IProps) {
   }, [setUsers, setAuth]);
 
   useEffect(() => {
-    const pusher = new Pusher("92227230285a5ac11574", {
+    const pusher = new Pusher(config.pusherId, {
       cluster: "ap2",
     });
     const authUser: IResUser = JSON.parse(localStorage.getItem("user")!);
