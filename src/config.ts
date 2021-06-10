@@ -1,5 +1,5 @@
 const config = {
-  baseURL: "http://localhost:9000",
+  baseURL: process.env.PUBLIC_URL || "https://whatsapp-clone-simple.herokuapp.com",
   pusherId: "92227230285a5ac11574"
 }
 
